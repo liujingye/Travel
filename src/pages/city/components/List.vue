@@ -17,10 +17,21 @@
 					</div>
 				</div>
 			</div>
-			<div class="area" v-for="(item, key) of cities" :key="key">
+			<div 
+				class="area" 
+				v-for="(item, key) of cities" 
+				:key="key"
+				:ref="key"
+			><!-- 11.ref=key,key=A,B,C...-->
 				<div class="title border-topbottom">{{key}}</div>
 				<div class="item-list">
-					<div class="item border-bottom" v-for="innerItem of item" :key="innerItem.id">{{innerItem.name}}</div>
+					<div 
+						class="item border-bottom" 
+						v-for="innerItem of item" 
+						:key="innerItem.id"
+					>
+						{{innerItem.name}}
+					</div>
 				</div>
 			</div>
 	</div>
@@ -33,10 +44,23 @@
 		name: 'CityList',
 		props: {
 			hot: Array,
-			cities: Object
+			cities: Object,
+			/*8.父组件City传递letter，子组件List接收letter*/
+			letter: String
 		},
 		mounted () {
 			this.scroll = new Bscroll(this.$refs.wrapper)
+		},
+		/*9.借助vue侦听器 一旦letter变化就执行*/
+		watch: {
+			letter () {
+				if (this.letter) {
+					//12通过this.$refs获取letter对应的class=area的区域
+					const element = this.$refs[this.letter][0]//this.$refs[this.letter]为数组不是一个标准的dom元素
+					//10.让berrer-scroll区域自动滚动到某个元素上
+					this.scroll.scrollToElement (element)
+				}
+			}
 		}
 	}
 </script>
