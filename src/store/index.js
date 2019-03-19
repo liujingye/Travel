@@ -17,10 +17,10 @@ export default new Vuex.Store({
 		}
 	},*/
 	//actions已经接收到传过来的city，需要调用mutations来改变公用的数据
-	mutations,
-	getters: {
+	mutations
+	/*getters: {
 		doubleCity (state) {
 			return state.city + ' ' + state.city
 		}
-	}
+	}*/
 })

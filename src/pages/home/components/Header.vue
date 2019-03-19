@@ -11,7 +11,7 @@
 		<router-link to='/city'>
 			<div class="header-right">
 				<!-- {{this.$store.state.city}}this.$store=store/index.js的Vuex.Store -->
-					{{this.doubleCity}}
+					{{this.city}}
 				<span class="iconfont arrow-icon">&#xe64a;</span>
 			 </div>
 		</router-link>
@@ -20,13 +20,14 @@
 </template>
 	
 <script>	
-import { mapState, mapGetters } from 'vuex'
+//import { mapState, mapGetters } from 'vuex'
+import { mapState } from 'vuex'
 export default {
   name: 'HomeHeader',
   computed: {
   	//mapState指把vuex里面的数据映射到这个组件的computed计算属性里，即把公用数据city映射到名为city的计算属性之中
   	...mapState (['city']),
-  	...mapGetters(['doubleCity'])
+  	//...mapGetters(['doubleCity'])
   }
 }			
 </script>		
