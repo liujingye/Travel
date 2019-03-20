@@ -2,9 +2,14 @@
 	<div>
 		<div class="title">热销推荐</div>
 		<ul>
-			<li class="item border-bottom" 
-			v-for="item of list"
-			:key="item.id"
+			<!-- router-link a标签改变文字为链接颜色
+			<router-link to="/detail"> li标签改为router-link tag="li" vue不会把它渲染成a标签而是li标签-->
+			<router-link 
+				tag="li"
+				class="item border-bottom" 
+				v-for="item of list"
+				:key="item.id"
+				:to="'/detail/'+item.id"
 			>
 				<img class="item-img" :src="item.imgUrl" />
 				<div class="item-info">
@@ -12,7 +17,7 @@
 					<p class="item-desc">{{item.desc}}</p>
 					<button class="item-button">查看详情</button>
 				</div>
-			</li>
+			</router-link>
 		</ul>
 	</div>
 </template>
