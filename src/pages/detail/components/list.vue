@@ -23,7 +23,6 @@
 		props:{
 			list:Array
 		},
->>>>>>> detail-list
 	}
 </script>
 
@@ -44,5 +43,4 @@
 			background-size: .4rem 3rem
 	.item-children 
 		padding: 0 .2rem
->>>>>>> detail-list
 </style>

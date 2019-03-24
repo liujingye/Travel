@@ -2,14 +2,9 @@
 	<div>
 		<detail-banner></detail-banner>
 		<detail-header></detail-header>
-<<<<<<< HEAD
-		<detail-list></detail-list>
-		<div class="content"></div>
-=======
 		<div class="content">
 			<detail-list :list="list"></detail-list>
 		</div>
->>>>>>> detail-list
 	</div>
 </template>
 
@@ -23,8 +18,6 @@
 			DetailBanner,
 			DetailHeader,
 			DetailList
-<<<<<<< HEAD
-=======
 		},
 		data () {
 			return {
@@ -46,7 +39,6 @@
 					title:'特惠票'
 				},]
 			}
->>>>>>> detail-list
 		}
 	}
 </script>
