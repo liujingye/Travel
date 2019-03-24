@@ -50,6 +50,11 @@
 		activated () {
 			//绑定scroll事件，一旦scroll被执行，对应的this.handleScroll方法被执行
 			window.addEventListener('scroll',this.handleScroll)
+		},
+		//对window全局事件解绑
+		//页面即将被隐藏或即将被替换成新的页面时这个组件的deactivated钩子会被执行
+		deactivated () {
+			window.removeEventListener('scroll',this.handleScroll)
 		}
 	}
 </script>
