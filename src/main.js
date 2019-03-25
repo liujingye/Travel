@@ -6,6 +6,7 @@ import router from './router'
 import fastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import store from './store'//默认找./store/index.js
+import 'babel-polyfill'//使在所有浏览器上都支持promise,解决真机测试时有些安卓低版本手机上白屏问题
 import 'styles/reset.css'
 import 'styles/border.css'
 import 'styles/iconfont.css'

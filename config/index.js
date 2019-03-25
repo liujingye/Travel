@@ -12,9 +12,12 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
         '/api': {
-            target: 'http://localhost:8080',
+            //前后端联调
+            target: 'http://localhost:8080',/*在开发环境中，将/api请求转到前端服务器端口localhost:8080*/
+            //target: 'http://localhost:80',//后台默认端口80，php服务器之上或内网ip地址或外网192.168...+端口号
             pathRewrite: {
-                '^/api':'/static/mock'
+                '^/api':'/static/mock',
+                /*'^/api':'/api'//php服务器的api下，可省略*/
             }
         }
     },

@@ -5,10 +5,10 @@
 			v-for="item of letters" 
 			:key="item" 
 			:ref="item"
-			@touchstart="handleTouchStart"
+			@touchstart.prevent="handleTouchStart"
 			@touchmove="handleTouchMove"
 			@touchend="handleTouchEnd"
-			@click="handleLetterClick"> <!-- 1.循环绑定click事件 -->
+			@click="handleLetterClick"> <!-- 1.循环绑定click事件 .prevent事件修饰符阻止touchstart的默认行为解决滚动字母表时整个页面跟着滚动的行为-->
 			{{item}} 
 			</li>
 		</ul>
