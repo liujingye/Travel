@@ -19,6 +19,9 @@ export default new Router({
 		path: '/detail/:id',//:id创建动态路由，/detail/固定，后面带参数放到id变量里面
 		name: 'Detail',
 		component: Detail
-	}]
-
+	}],
+	/*解决页面之间拖动相互影响。每次作路由切换时，让新进入的页面x=0,y=0，页面切换时始终进入到最顶部*/
+	scrollBehavior (to, from, savedPosition) {
+		return { x: 0, y: 0 }
+	}
 })
