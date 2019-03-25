@@ -13,20 +13,20 @@
 				</div>
 		</div>
 		<fade-animation>
-			<!-- commom-gallary作为slot形式插入到fade-animation组件中 -->
+			<!-- common-gallary以slot形式插入fade-animation组件中 -->
 			<common-gallary 
 				:imgs="gallaryImgs" 
 				v-show="showGallary"
 				@close="handleGallaryClose"
 			>
-			</common-gallary><!-- 1.common-gallary默认的形式是隐藏的，用showGallary控制gallary的显示和隐藏 -->
-		</fade-animation>
+		</common-gallary><!-- 1.common-gallary默认的形式是隐藏的，用showGallary控制gallary的显示和隐藏 -->
+	</fade-animation>
 	</div>	
 </template>
 
 <script>
 	import CommonGallary from 'common/gallary/Gallary'
-	import FadeAnimation from 'common/fadeAnimation/FadeAnimation'
+	import FadeAnimation from 'common/fade/FadeAnimation'
 	export default {
 		name: 'DetailBanner',
 		props: {
