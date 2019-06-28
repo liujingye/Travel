@@ -1,7 +1,7 @@
 # Travel
 
 #### Description
-imooc去哪网
+旅游App
 
 #### Software Architecture
 Software architecture description
